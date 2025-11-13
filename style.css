@@ -638,91 +638,32 @@ label {
     width: 100%;
 }
 
-/* Responsive: letter popup and envelope on mobile */
-@media (max-width: 768px) {
-    .wrapperLetterForm { 
-        padding: 16px; 
-        overflow-y: auto; 
-        -webkit-overflow-scrolling: touch;
-    }
+/* Thu nhỏ trên thiết bị di động nhưng giữ nguyên cấu trúc ngang */
+@media (max-width: 640px) {
     .boxLetter .formLetter {
-        width: 100%;
-        max-width: 560px;
-        height: auto;
-        min-height: 320px;
-        padding: 16px 14px;
-        border-radius: 18px;
-    }
-    .boxLetter .before {
-        width: 88%;
-        height: 85%;
-        transform: rotate(-10deg);
-        left: auto;
-        right: auto;
+        width: 90vw; /* thu nhỏ theo chiều ngang */
+        height: calc(90vw * 0.5833); /* giữ tỷ lệ gốc ~350/600 */
+        padding: 16px 12px;
     }
     .formLetter .wrapperLetter {
-        flex-direction: column;
+        flex-direction: row; /* đảm bảo không đổi sang cột */
         align-items: center;
-        justify-content: flex-start;
     }
-    .giftbox {
-        width: 100%;
-        height: 140px;
-    }
-    .giftbox .img {
-        width: 140px;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -6px;
-    }
-    .textLetter {
-        align-items: center;
-        padding-left: 0;
-        margin-top: 8px;
-    }
-    .textLetter h2 {
-        font-size: 26px;
-        text-align: center;
-    }
-    .textLetter .contentLetter {
-        font-size: 17px;
-        line-height: 1.45;
-        padding: 0 6px;
-    }
-    .fa-xmark {
-        font-size: 24px;
-        right: 12px;
-        top: 12px;
-    }
-    /* Slightly reduce envelope scale on tablets/phones */
-    .valentines { 
-        transform: scale(0.9); 
-        transform-origin: center top; 
-    }
+    .giftbox { height: 100%; }
+    .giftbox .img { width: 140px; left: 20px; bottom: -4px; }
+    .textLetter h2 { font-size: 26px; }
+    .textLetter .contentLetter { font-size: 16px; line-height: 1.4; }
+    .fa-xmark { font-size: 22px; }
 }
 
 @media (max-width: 480px) {
     .boxLetter .formLetter {
-        min-height: 300px;
-        border-radius: 16px;
+        width: 95vw;
+        height: calc(95vw * 0.5833);
+        padding: 14px 10px;
     }
-    .boxLetter .before { 
-        display: none; 
-    }
-    .textLetter h2 { 
-        font-size: 22px; 
-    }
-    .textLetter .contentLetter { 
-        font-size: 16px; 
-        max-height: 45vh; 
-        overflow-y: auto; 
-        -webkit-overflow-scrolling: touch; 
-    }
-    .giftbox .img { 
-        width: 120px; 
-    }
-    /* Further reduce envelope on small phones */
-    .valentines { 
-        transform: scale(0.78); 
-    }
+    .giftbox .img { width: 120px; left: 12px; }
+    .textLetter h2 { font-size: 22px; }
+    .textLetter .contentLetter { font-size: 15px; }
+    .fa-xmark { right: 14px; top: 14px; }
 }
